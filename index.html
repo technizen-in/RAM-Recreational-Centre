@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>RAM Recreational Centre | South Innisfail</title>
+  <meta name="description" content="RAM Recreational Centre in South Innisfail, Queensland. A welcoming recreational space for movement, activity and community.">
+
+  <style>
+    :root{
+      --navy:#122b36;
+      --teal:#1f6670;
+      --aqua:#58b7b0;
+      --cream:#f6f1e7;
+      --sand:#e7d8bd;
+      --white:#ffffff;
+      --dark:#172126;
+      --muted:#657177;
+      --orange:#e89042;
+      --shadow:0 18px 50px rgba(18,43,54,.12);
+      --radius:22px;
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box}
+
+    html{scroll-behavior:smooth}
+
+    body{
+      font-family:Arial,Helvetica,sans-serif;
+      color:var(--dark);
+      background:#fff;
+      line-height:1.6;
+    }
+
+    a{text-decoration:none;color:inherit}
+
+    img{
+      width:100%;
+      display:block;
+      object-fit:cover;
+    }
+
+    .container{
+      width:min(1160px,92%);
+      margin:auto;
+    }
+
+    /* TOP BAR */
+    .topbar{
+      background:var(--navy);
+      color:#fff;
+      font-size:14px;
+      padding:9px 0;
+    }
+
+    .topbar-inner{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+    }
+
+    .topbar a{
+      color:#fff;
+      font-weight:700;
+    }
+
+    /* NAV */
+    nav{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(255,255,255,.96);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid #eee;
+    }
+
+    .nav-inner{
+      min-height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:30px;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .logo-mark{
+      width:45px;
+      height:45px;
+      border-radius:14px;
+      background:var(--teal);
+      color:#fff;
+      display:grid;
+      place-items:center;
+      font-weight:900;
+      font-size:18px;
+    }
+
+    .logo strong{
+      display:block;
+      font-size:18px;
+      letter-spacing:.3px;
+    }
+
+    .logo span{
+      display:block;
+      font-size:11px;
+      color:var(--muted);
+      text-transform:uppercase;
+      letter-spacing:1.5px;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:26px;
+      align-items:center;
+    }
+
+    .nav-links a{
+      font-size:14px;
+      font-weight:700;
+      color:#32434a;
+    }
+
+    .nav-links a:hover{color:var(--teal)}
+
+    .nav-btn{
+      background:var(--teal);
+      color:#fff!important;
+      padding:12px 18px;
+      border-radius:30px;
+    }
+
+    /* HERO */
+    .hero{
+      min-height:700px;
+      position:relative;
+      display:flex;
+      align-items:center;
+      overflow:hidden;
+      background:
+        linear-gradient(90deg,rgba(10,35,43,.88) 0%,rgba(10,35,43,.65) 48%,rgba(10,35,43,.18) 100%),
+        url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+    }
+
+    .hero-content{
+      color:#fff;
+      max-width:720px;
+      padding:90px 0;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:rgba(88,183,176,.18);
+      border:1px solid rgba(255,255,255,.28);
+      color:#dff9f5;
+      padding:8px 14px;
+      border-radius:30px;
+      font-size:12px;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:1.5px;
+      margin-bottom:22px;
+    }
+
+    .hero h1{
+      font-size:clamp(42px,6vw,76px);
+      line-height:1.02;
+      letter-spacing:-2.5px;
+      margin-bottom:22px;
+    }
+
+    .hero p{
+      font-size:19px;
+      max-width:630px;
+      color:#eef7f6;
+      margin-bottom:32px;
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:13px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:14px 22px;
+      border-radius:50px;
+      font-weight:800;
+      font-size:14px;
+      transition:.25s;
+    }
+
+    .btn-primary{
+      background:var(--aqua);
+      color:#082a30;
+    }
+
+    .btn-primary:hover{transform:translateY(-2px)}
+
+    .btn-light{
+      background:#fff;
+      color:var(--navy);
+    }
+
+    /* INTRO */
+    .intro{
+      padding:100px 0;
+      background:var(--cream);
+    }
+
+    .intro-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:65px;
+      align-items:center;
+    }
+
+    .section-label{
+      color:var(--teal);
+      font-size:12px;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:2px;
+      margin-bottom:13px;
+    }
+
+    h2{
+      font-size:clamp(32px,4vw,52px);
+      line-height:1.1;
+      letter-spacing:-1.5px;
+      color:var(--navy);
+      margin-bottom:20px;
+    }
+
+    .intro p{
+      color:#58666b;
+      font-size:17px;
+      margin-bottom:18px;
+    }
+
+    .image-card{
+      border-radius:28px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+
+    .image-card img{height:430px}
+
+    /* FEATURES */
+    .features{
+      padding:100px 0;
+    }
+
+    .section-head{
+      text-align:center;
+      max-width:700px;
+      margin:0 auto 50px;
+    }
+
+    .section-head p{
+      color:var(--muted);
+      font-size:16px;
+    }
+
+    .feature-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+    }
+
+    .feature{
+      background:#fff;
+      border:1px solid #e8eeee;
+      padding:34px;
+      border-radius:var(--radius);
+      transition:.25s;
+    }
+
+    .feature:hover{
+      transform:translateY(-5px);
+      box-shadow:var(--shadow);
+    }
+
+    .feature-icon{
+      width:55px;
+      height:55px;
+      border-radius:17px;
+      background:#e4f4f2;
+      color:var(--teal);
+      display:grid;
+      place-items:center;
+      font-size:24px;
+      margin-bottom:20px;
+    }
+
+    .feature h3{
+      color:var(--navy);
+      margin-bottom:10px;
+      font-size:20px;
+    }
+
+    .feature p{
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    /* ACTIVITY */
+    .activity{
+      background:var(--navy);
+      color:#fff;
+      padding:100px 0;
+    }
+
+    .activity-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:60px;
+      align-items:center;
+    }
+
+    .activity h2{color:#fff}
+
+    .activity-copy p{
+      color:#d4e1e2;
+      margin-bottom:20px;
+    }
+
+    .activity-list{
+      display:grid;
+      gap:14px;
+      margin-top:28px;
+    }
+
+    .activity-item{
+      display:flex;
+      align-items:center;
+      gap:15px;
+      padding:15px 18px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.05);
+      border-radius:15px;
+    }
+
+    .check{
+      width:32px;
+      height:32px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:var(--aqua);
+      color:var(--navy);
+      font-weight:900;
+      flex:none;
+    }
+
+    .activity-image{
+      border-radius:28px;
+      overflow:hidden;
+    }
+
+    .activity-image img{
+      height:470px;
+    }
+
+    /* COMMUNITY */
+    .community{
+      padding:100px 0;
+      background:#f8faf9;
+    }
+
+    .community-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+    }
+
+    .community-card{
+      min-height:260px;
+      border-radius:23px;
+      padding:32px;
+      background:#fff;
+      border:1px solid #e6eceb;
+    }
+
+    .community-card:nth-child(2){
+      background:#e4f2f0;
+    }
+
+    .community-card:nth-child(3){
+      background:#f5ead9;
+    }
+
+    .community-card h3{
+      color:var(--navy);
+      font-size:22px;
+      margin-bottom:12px;
+    }
+
+    .community-card p{
+      color:#5d6a6e;
+      font-size:15px;
+    }
+
+    /* LOCATION */
+    .location{
+      padding:100px 0;
+    }
+
+    .location-grid{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:40px;
+      align-items:stretch;
+    }
+
+    .contact-box{
+      background:var(--cream);
+      padding:40px;
+      border-radius:26px;
+    }
+
+    .contact-box h2{font-size:40px}
+
+    .contact-item{
+      display:flex;
+      gap:15px;
+      padding:17px 0;
+      border-bottom:1px solid rgba(18,43,54,.12);
+    }
+
+    .contact-item:last-child{border-bottom:0}
+
+    .contact-icon{
+      width:40px;
+      height:40px;
+      border-radius:12px;
+      background:#fff;
+      display:grid;
+      place-items:center;
+      color:var(--teal);
+      flex:none;
+    }
+
+    .contact-item strong{
+      display:block;
+      color:var(--navy);
+      margin-bottom:2px;
+    }
+
+    .contact-item span,
+    .contact-item a{
+      color:#5c686c;
+      font-size:14px;
+    }
+
+    .map{
+      min-height:450px;
+      border-radius:26px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+
+    .map iframe{
+      width:100%;
+      height:100%;
+      min-height:450px;
+      border:0;
+    }
+
+    /* CTA */
+    .cta{
+      padding:30px 0 100px;
+    }
+
+    .cta-box{
+      background:
+        linear-gradient(110deg,rgba(18,43,54,.96),rgba(31,102,112,.92)),
+        url("https://images.unsplash.com/photo-1526676037777-05a232554f77?auto=format&fit=crop&w=1600&q=80")
+        center/cover;
+      color:#fff;
+      padding:65px;
+      border-radius:30px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:35px;
+    }
+
+    .cta-box h2{
+      color:#fff;
+      margin-bottom:10px;
+    }
+
+    .cta-box p{
+      color:#dcebea;
+      max-width:650px;
+    }
+
+    /* TECHNIZEN PROMO */
+    .tech-promo{
+      padding:100px 0;
+      background:#f3f0e8;
+    }
+
+    .promo-box{
+      background:#fff;
+      border:1px solid #ddd8cc;
+      border-radius:30px;
+      padding:55px;
+      box-shadow:0 18px 60px rgba(0,0,0,.06);
+    }
+
+    .promo-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:35px;
+      margin-bottom:35px;
+    }
+
+    .promo-label{
+      color:var(--orange);
+      font-weight:900;
+      font-size:13px;
+      letter-spacing:2px;
+    }
+
+    .promo-box h2{
+      font-size:clamp(32px,4vw,48px);
+      max-width:720px;
+      margin-top:8px;
+    }
+
+    .promo-price{
+      background:var(--navy);
+      color:#fff;
+      padding:20px 25px;
+      border-radius:20px;
+      min-width:190px;
+      text-align:center;
+    }
+
+    .promo-price strong{
+      display:block;
+      font-size:28px;
+    }
+
+    .promo-price span{
+      font-size:12px;
+      color:#cbd8da;
+    }
+
+    .promo-copy{
+      color:#59656a;
+      max-width:850px;
+      margin-bottom:25px;
+    }
+
+    .benefits{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+      margin:30px 0;
+    }
+
+    .benefit{
+      padding:13px 15px;
+      border-radius:12px;
+      background:#f5f7f5;
+      color:#344348;
+      font-size:13px;
+      font-weight:700;
+    }
+
+    .promo-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:28px;
+    }
+
+    .promo-actions .btn{
+      border-radius:12px;
+    }
+
+    .btn-dark{
+      background:var(--navy);
+      color:#fff;
+    }
+
+    .btn-orange{
+      background:var(--orange);
+      color:#fff;
+    }
+
+    .btn-outline{
+      border:1px solid #cbd1cf;
+      color:var(--navy);
+      background:#fff;
+    }
+
+    /* FOOTER */
+    footer{
+      background:#0c2027;
+      color:#d6e0e1;
+      padding:65px 0 0;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.4fr 1fr 1fr;
+      gap:50px;
+      padding-bottom:50px;
+    }
+
+    footer h3{
+      color:#fff;
+      margin-bottom:15px;
+    }
+
+    footer p{
+      color:#aebfc2;
+      font-size:14px;
+      max-width:430px;
+    }
+
+    .footer-links{
+      display:grid;
+      gap:9px;
+    }
+
+    .footer-links a{
+      color:#aebfc2;
+      font-size:14px;
+    }
+
+    .footer-links a:hover{color:#fff}
+
+    .footer-bottom{
+      border-top:1px solid rgba(255,255,255,.1);
+      text-align:center;
+      padding:25px 15px 30px;
+      color:#93a7aa;
+      font-size:13px;
+    }
+
+    .footer-bottom a{
+      color:#fff;
+      font-weight:700;
+    }
+
+    /* FLOATING WHATSAPP */
+    .whatsapp{
+      position:fixed;
+      right:22px;
+      bottom:22px;
+      z-index:1200;
+      width:58px;
+      height:58px;
+      border-radius:50%;
+      background:#25D366;
+      color:#fff;
+      display:grid;
+      place-items:center;
+      font-size:27px;
+      box-shadow:0 10px 30px rgba(0,0,0,.22);
+    }
+
+    /* POPUP */
+    .popup-overlay{
+      position:fixed;
+      inset:0;
+      background:rgba(4,19,24,.72);
+      backdrop-filter:blur(6px);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      z-index:3000;
+      padding:20px;
+    }
+
+    .popup{
+      width:min(550px,100%);
+      background:#fff;
+      border-radius:26px;
+      padding:40px;
+      text-align:center;
+      box-shadow:0 30px 100px rgba(0,0,0,.3);
+    }
+
+    .popup-logo{
+      width:58px;
+      height:58px;
+      margin:0 auto 18px;
+      border-radius:18px;
+      background:var(--navy);
+      color:#fff;
+      display:grid;
+      place-items:center;
+      font-weight:900;
+    }
+
+    .popup h2{
+      font-size:30px;
+      margin-bottom:12px;
+    }
+
+    .popup p{
+      color:#647176;
+      font-size:14px;
+      margin-bottom:22px;
+    }
+
+    .popup a{
+      color:var(--teal);
+      font-weight:800;
+    }
+
+    .popup .btn{
+      border:0;
+      cursor:pointer;
+      width:100%;
+      margin-top:10px;
+    }
+
+    /* MOBILE */
+    @media(max-width:850px){
+      .nav-links{display:none}
+
+      .hero{min-height:650px}
+
+      .intro-grid,
+      .activity-grid,
+      .location-grid{
+        grid-template-columns:1fr;
+      }
+
+      .feature-grid,
+      .community-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .cta-box{
+        flex-direction:column;
+        align-items:flex-start;
+        padding:45px 30px;
+      }
+
+      .promo-top{
+        flex-direction:column;
+      }
+
+      .benefits{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .footer-grid{
+        grid-template-columns:1fr 1fr;
+      }
+    }
+
+    @media(max-width:600px){
+      .topbar-inner{
+        justify-content:center;
+        text-align:center;
+      }
+
+      .topbar-inner span{display:none}
+
+      .nav-inner{min-height:68px}
+
+      .hero-content{
+        padding:70px 0;
+      }
+
+      .hero h1{
+        letter-spacing:-1.5px;
+      }
+
+      .hero p{
+        font-size:16px;
+      }
+
+      .intro,
+      .features,
+      .activity,
+      .community,
+      .location,
+      .tech-promo{
+        padding:70px 0;
+      }
+
+      .feature-grid,
+      .community-grid,
+      .benefits,
+      .footer-grid{
+        grid-template-columns:1fr;
+      }
+
+      .image-card img,
+      .activity-image img{
+        height:330px;
+      }
+
+      .contact-box{
+        padding:30px;
+      }
+
+      .cta{
+        padding-bottom:70px;
+      }
+
+      .promo-box{
+        padding:32px 22px;
+      }
+
+      .promo-price{
+        width:100%;
+      }
+
+      .promo-actions{
+        flex-direction:column;
+      }
+
+      .promo-actions .btn{
+        width:100%;
+      }
+
+      .popup{
+        padding:30px 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- TECHNIZEN POPUP -->
+  <div class="popup-overlay" id="techPopup">
+    <div class="popup">
+      <div class="popup-logo">TZ</div>
+
+      <h2>Sample Website Concept</h2>
+
+      <p>
+        This website is a sample concept developed by
+        <strong>Technizen Solutions</strong>.
+        All rights reserved to Technizen Solutions.
+        <br><br>
+        Want a professional website like this for your business?
+        Visit <a href="https://technizen.com.au/" target="_blank">technizen.com.au</a>
+        or explore our website packages.
+        <br><br>
+        WhatsApp: <a href="https://wa.me/61342361236" target="_blank">+61 3 4236 1236</a>
+      </p>
+
+      <a class="btn btn-dark"
+         href="javascript:void(0)"
+         onclick="document.getElementById('techPopup').style.display='none'">
+        Continue to Website
+      </a>
+    </div>
+  </div>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span>South Innisfail · Queensland</span>
+      <a href="tel:+61478045980">Call RAM Recreational Centre · 0478 045 980</a>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="container nav-inner">
+
+      <a href="#" class="logo">
+        <div class="logo-mark">RAM</div>
+        <div>
+          <strong>RAM Recreational Centre</strong>
+          <span>South Innisfail</span>
+        </div>
+      </a>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#activities">Activities</a>
+        <a href="#community">Community</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-btn" href="tel:+61478045980">Get in Touch</a>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+
+    <div class="container">
+      <div class="hero-content">
+
+        <div class="eyebrow">Recreation · Movement · Community</div>
+
+        <h1>
+          Move more.<br>
+          Connect more.
+        </h1>
+
+        <p>
+          A welcoming recreational space in South Innisfail for
+          activity, movement and community connection.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact">Visit RAM</a>
+          <a class="btn btn-light" href="tel:+61478045980">Call 0478 045 980</a>
+        </div>
+
+      </div>
+    </div>
+
+  </header>
+
+  <!-- ABOUT -->
+  <section class="intro" id="about">
+    <div class="container intro-grid">
+
+      <div>
+        <div class="section-label">Welcome to RAM</div>
+
+        <h2>A place for recreation, activity and connection.</h2>
+
+        <p>
+          RAM Recreational Centre is located on Stitt Street in
+          Mighell, serving the South Innisfail community and
+          surrounding areas.
+        </p>
+
+        <p>
+          Whether you're looking for a place to stay active,
+          participate in recreational activities or connect with
+          others, RAM provides a friendly local setting focused on
+          movement and community.
+        </p>
+
+        <a class="btn btn-dark" href="#contact">Find Us</a>
+      </div>
+
+      <div class="image-card">
+        <img
+          src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1200&q=85"
+          alt="Recreational fitness space">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <div class="container">
+
+      <div class="section-head">
+        <div class="section-label">The RAM Experience</div>
+        <h2>More than just a place to exercise.</h2>
+        <p>
+          Recreation is about staying active, meeting people and
+          making time for yourself.
+        </p>
+      </div>
+
+      <div class="feature-grid">
+
+        <div class="feature">
+          <div class="feature-icon">⚡</div>
+          <h3>Stay Active</h3>
+          <p>
+            Make movement part of your routine in a comfortable
+            recreational environment.
+          </p>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">🤝</div>
+          <h3>Community</h3>
+          <p>
+            A local space where people can connect, participate
+            and enjoy recreational activities together.
+          </p>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">🌿</div>
+          <h3>Healthy Lifestyle</h3>
+          <p>
+            Support an active lifestyle and make time for physical
+            activity and wellbeing.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ACTIVITIES -->
+  <section class="activity" id="activities">
+    <div class="container activity-grid">
+
+      <div class="activity-copy">
+
+        <div class="section-label" style="color:#7bd1ca;">
+          Recreation
+        </div>
+
+        <h2>Find your reason to move.</h2>
+
+        <p>
+          A recreational centre can be a place to build healthy
+          habits, spend quality time and enjoy being part of the
+          local community.
+        </p>
+
+        <div class="activity-list">
+
+          <div class="activity-item">
+            <div class="check">✓</div>
+            <span>Active recreation and movement</span>
+          </div>
+
+          <div class="activity-item">
+            <div class="check">✓</div>
+            <span>Community-focused environment</span>
+          </div>
+
+          <div class="activity-item">
+            <div class="check">✓</div>
+            <span>A welcoming local destination</span>
+          </div>
+
+          <div class="activity-item">
+            <div class="check">✓</div>
+            <span>Space to make activity part of your lifestyle</span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="activity-image">
+        <img
+          src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=85"
+          alt="People enjoying recreational activity">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- COMMUNITY -->
+  <section class="community" id="community">
+    <div class="container">
+
+      <div class="section-head">
+        <div class="section-label">Local Connection</div>
+        <h2>Built around people.</h2>
+        <p>
+          Recreation becomes better when it brings people together.
+        </p>
+      </div>
+
+      <div class="community-grid">
+
+        <div class="community-card">
+          <h3>Get Active</h3>
+          <p>
+            Find opportunities to move, stay active and develop
+            healthier everyday routines.
+          </p>
+        </div>
+
+        <div class="community-card">
+          <h3>Meet People</h3>
+          <p>
+            Enjoy a community-oriented environment where recreation
+            and social connection can go hand in hand.
+          </p>
+        </div>
+
+        <div class="community-card">
+          <h3>Enjoy South Innisfail</h3>
+          <p>
+            Located close to the Innisfail area, RAM is a convenient
+            local destination for recreation and activity.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- LOCATION -->
+  <section class="location" id="contact">
+    <div class="container">
+
+      <div class="section-head">
+        <div class="section-label">Visit RAM</div>
+        <h2>Come and connect.</h2>
+        <p>
+          Find RAM Recreational Centre in Mighell, South Innisfail.
+        </p>
+      </div>
+
+      <div class="location-grid">
+
+        <div class="contact-box">
+
+          <h2>Contact</h2>
+
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <strong>Address</strong>
+              <span>
+                Lot 2 Stitt St, Mighell QLD 4860, Australia
+              </span>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">☎</div>
+            <div>
+              <strong>Phone</strong>
+              <a href="tel:+61478045980">
+                +61 478 045 980
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">📌</div>
+            <div>
+              <strong>Area</strong>
+              <span>South Innisfail · Queensland</span>
+            </div>
+          </div>
+
+          <div style="margin-top:25px;">
+            <a
+              class="btn btn-dark"
+              href="https://www.google.com/maps/search/?api=1&query=RAM+Recreational+Centre,+Lot+2+Stitt+St,+Mighell+QLD+4860"
+              target="_blank">
+              Open in Google Maps
+            </a>
+          </div>
+
+        </div>
+
+        <div class="map">
+          <iframe
+            src="https://www.google.com/maps?q=RAM%20Recreational%20Centre%2C%20Lot%202%20Stitt%20St%2C%20Mighell%20QLD%204860&output=embed"
+            loading="lazy"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+
+      <div class="cta-box">
+
+        <div>
+          <h2>Make recreation part of your routine.</h2>
+          <p>
+            Discover RAM Recreational Centre in South Innisfail
+            and connect with your local community.
+          </p>
+        </div>
+
+        <a class="btn btn-primary" href="tel:+61478045980">
+          Contact RAM
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TECHNIZEN PROMO -->
+  <section class="tech-promo">
+    <div class="container">
+
+      <div class="promo-box">
+
+        <div class="promo-top">
+
+          <div>
+            <div class="promo-label">LOVE THIS WEBSITE?</div>
+
+            <h2>
+              We Can Build A Similar Or Even Better Website For You.
+            </h2>
+          </div>
+
+          <div class="promo-price">
+            <strong>A$299</strong>
+            <span>Single page site · first year</span>
+          </div>
+
+        </div>
+
+        <p class="promo-copy">
+          Give your business a professional online presence with
+          your own custom domain like
+          <strong>yourbusiness.com.au</strong>.
+          Get a mobile-friendly website designed around your brand
+          and built to help customers find, trust and contact you.
+        </p>
+
+        <div class="benefits">
+
+          <div class="benefit">✓ Own custom domain</div>
+          <div class="benefit">✓ Brand protection</div>
+          <div class="benefit">✓ 24×7 online availability</div>
+          <div class="benefit">✓ Booking & enquiry management</div>
+          <div class="benefit">✓ Organic visibility</div>
+          <div class="benefit">✓ More customer enquiries</div>
+          <div class="benefit">✓ Professional credibility</div>
+          <div class="benefit">✓ Mobile-friendly design</div>
+          <div class="benefit">✓ Easy customer access</div>
+
+        </div>
+
+        <p style="font-weight:800;color:var(--navy);">
+          Single page site starting A$299 for first year.
+          <br>
+          Renewal <span style="color:var(--orange);">60% OFF</span>.
+        </p>
+
+        <div class="promo-actions">
+
+          <a
+            class="btn btn-dark"
+            href="https://wa.me/61342361236"
+            target="_blank">
+            BUILD MY WEBSITE
+          </a>
+
+          <a
+            class="btn btn-orange"
+            href="https://technizen.com.au/pay299"
+            target="_blank">
+            Get this template
+          </a>
+
+          <a
+            class="btn btn-outline"
+            href="https://technizen.com.au/promo"
+            target="_blank">
+            Browse other templates
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="container footer-grid">
+
+      <div>
+        <h3>RAM Recreational Centre</h3>
+        <p>
+          A local recreational destination in Mighell,
+          South Innisfail, Queensland.
+        </p>
+      </div>
+
+      <div>
+        <h3>Quick Links</h3>
+
+        <div class="footer-links">
+          <a href="#about">About</a>
+          <a href="#activities">Activities</a>
+          <a href="#community">Community</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+
+      <div>
+        <h3>Contact</h3>
+
+        <div class="footer-links">
+          <a href="tel:+61478045980">0478 045 980</a>
+          <a href="#contact">Lot 2 Stitt St, Mighell QLD 4860</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=RAM+Recreational+Centre,+Lot+2+Stitt+St,+Mighell+QLD+4860" target="_blank">
+            View Location
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom" id="r5i6yl">
+
+        This sample website was developed by
+        <a href="https://technizen.in/">Technizen Solutions</a>.
+
+        <br><br>
+
+        Want a website like this for your business?
+        Contact Technizen Solutions.
+
+        <br><br>
+
+        © 2026 Technizen Solutions · Sample Website Concept
+
+    </div>
+
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a
+    class="whatsapp"
+    href="https://wa.me/61342361236"
+    target="_blank"
+    aria-label="Contact Technizen Solutions on WhatsApp">
+    ☎
+  </a>
+
+</body>
+</html>
